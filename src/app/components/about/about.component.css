@@ -11,6 +11,14 @@
     text-align: center;
 }
 
+.centrar {
+    text-align: center;
+}
+
+.titleInfo {
+    justify-content: center;
+}
+
 #perfil {
     position: absolute;
     justify-content: center;

@@ -1,12 +1,9 @@
-<app-ingresar></app-ingresar>
+<app-header></app-header>
 <app-banner></app-banner>
 <app-about></app-about>
-<app-cuerpo *ngFor="let acerca of about"
-[acerca]= "acerca" (onDeleteInfo)="deleteInfo(acerca)"></app-cuerpo>
-<app-experience (onAddChanges)="addChanges($event)" *ngIf="editarPagina"></app-experience>
+<!-- <app-education *ngFor="let educ for education" [educ]="educ"></app-education> -->
 <app-education></app-education>
-<!-- <app-form-info (agregarChanges)="modificarChanges($event)"></app-form-info> -->
+<!-- <app-skills *ngFor="let skill for habilidad" [skill]="skill"></app-education> -->
 <app-skills></app-skills>
 <app-projects></app-projects>
-<!-- *ngFor="let educ of education"
-[educ]= "educ" (onDelete)="borrar(educ)" -->
+<app-footer></app-footer>

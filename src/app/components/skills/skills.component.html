@@ -1,16 +1,55 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-3"></div>
         <div class="col-6">
-            <h3 class="texto">Habilidades</h3>
-            <app-edicion *ngIf="ejemploBoolean"></app-edicion>
-        <p>HTML 5</p>
+        <h3 class="texto">Habilidades</h3>
+        <p>{{form.hability}}</p>
         <div class="progress">
             <div class="bg-dark progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                aria-label="Animated striped example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Animated striped example" [aria-valuenow]="{skill.nivel}" aria-valuemin="0" aria-valuemax="100"
                 style="width: 80%"></div>
+        </div> [style]="width: {skill.nivel}"
+        ponerlo en porcentaje
+    </div>
+    <div class="col-6"></div>
+</div> -->
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h3 class="texto mt-5">Habilidades</h3>
+        <button type="button" class="btn btn-warning" (click)="editarOn()">Editar</button>
+        <!-- <button (click)="saveHabilidad(form.id)" *ngIf="mostrarEditar">Nuevo/Modificar</button> -->
+        <!-- <button (click)="deleteHabilidad(form.id)" *ngIf="mostrarEditar">Eliminar</button> -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <form *ngIf="mostrarEditar">
+                    <div class="m-5">
+                        <h1 class="app-title">Editar portfolio</h1>
+                        <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+                            <label for="exampleInputId" class="form-label">Id</label>
+                            <input type="number" formControlName="id" class="form-control" id="exampleInputId" placeholder="Ingrese el ID">
+                        </div>
+                        <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+                            <label for="exampleInputHabilidad" class="form-label">Habilidad</label>
+                            <input type="text" formControlName="habilidad" class="form-control" id="exampleInputHabilidad" placeholder="Ingrese la habilidad">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputNivel" class="form-label">Nivel</label>
+                            <input type="number" formControlName="nivel" class="form-control" id="exampleInputNivel" placeholder="Ingrese su nivel">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p>HTML 5</p>
+        <div class="progress">
+            <div id="imageProyect" class="bg-dark progress-bar progress-bar-striped progress-bar-animated"
+                role="progressbar" aria-label="Animated striped example" aria-valuenow="80" aria-valuemin="0"
+                aria-valuemax="100" [ngStyle]="{'width': numberToPercent(23)}"></div>
+            <!-- [style]="width: numberToPercent(3)"></div> -->
         </div>
         <br>
-        <p>CSS</p>
+        <p>CSS3</p>
         <div class="progress">
             <div class="bg-dark progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                 aria-label="Animated striped example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
@@ -30,6 +69,7 @@
                 aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
                 style="width: 75%"></div>
         </div>
+        <!-- agregar icon edit y delete -->
+        <!-- [formGroup]="form"  -->
+        <div class="col-3"></div>
     </div>
-    <div class="col-6"></div>
-</div>

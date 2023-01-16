@@ -1,29 +1,84 @@
-<div class="col-12">
-    <img id="perfil" src="\assets\yo.png" class="img-fluid" alt="...">
-</div>
-<div class="row blanco">
-    <div class="d-flex justify-content-center">
-        <p>a</p>
-        <p>a</p>
-        <p>a</p>
+<!-- *ngFor="let form of formList" -->
+<div>
+    <div class="col-12">
+        <img id="perfil" src="\assets\yo.png" class="img-fluid" alt="...">
+        <!-- <img id="perfil" [src]="form.url_perfil" class="img-fluid" alt="..."> -->
     </div>
-</div>
-<div class="row">
-    <div class="d-flex justify-content-center">
-        <h1 class="texto">Lourdes Ramos</h1>
+    <div class="row blanco">
+        <div class="d-flex justify-content-center">
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+        </div>
     </div>
-    <h3>Developer Full Stack Jr</h3>
-</div>
-<!-- <div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-        <p>probandoo</p>
-        <h2 class="texto">Sobre mí<app-edicion *ngIf="ejemploBoolean"></app-edicion>
-        </h2>
-        <p>
-            Hola! Mi nombre es Lourdes, soy una desarrolladora web ubicada en Argentina con un especial interés en la creación y diseño de obras completamente originales, autodidacta, trabajadora independiente y amante de la música.
-        </p>
+    <div class="justify-content-center">
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <!-- <h1 class="texto">{{form.nombre}}{{form.apellido}}</h1> -->
+                <h1 class="texto">Lourdes Ramos</h1>
+            </div>
+            <!-- <h3>{{form.profesion}}</h3> -->
+            <h3>developer jr</h3>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="texto d-flex justify-content-center">Sobre mí</h2>
+                <!-- <p class="textoInfo">{{form.sobre_mi}}</p> -->
+                <p class="textoInfo  d-flex justify-content-center">este es un texto de prueba y aquí tiene que ir el sobre_mi de la base de datos</p>
+                <button type="button" class="btn btn-warning" (click)="editarOn()">Editar</button>
+                <!-- <button (click)="savePersona(form.id)" *ngIf="mostrarEditar">Nuevo/Modificar</button> -->
+                <!-- <button (click)="deletePersona(form.id)" *ngIf="mostrarEditar">Eliminar</button> -->
+            </div>
+        </div>
     </div>
-    <div class="col-3"></div>
-</div> -->
 
+    <!-- agregar icon edit y delete -->
+    <!-- [formGroup]="form"  -->
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <form *ngIf="mostrarEditar">
+                <div class="m-5">
+                    <h1 class="app-title">Editar portfolio</h1>
+                    <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+                        <label for="exampleInputId" class="form-label">Id</label>
+                        <input type="number" formControlName="id" class="form-control" id="exampleInputId" placeholder="Ingrese el ID">
+                    </div>
+                    <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+                        <label for="exampleInputNombre" class="form-label">Nombre</label>
+                        <input type="text" formControlName="nombre" class="form-control" id="exampleInputNombre" placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputApellido" class="form-label">Apellido</label>
+                        <input type="text" formControlName="apellido" class="form-control" id="exampleInputApellido" placeholder="Ingrese su apellido">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputSobreMi" class="form-label">Sobre mí</label>
+                        <input type="text" formControlName="sobre_mi" class="form-control" id="exampleInputSobreMi"
+                        placeholder="Ingrese una breve descripción">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPerfil" class="form-label">URL Perfil</label>
+                        <input type="text" formControlName="url_perfil" class="form-control" id="exampleInputPerfil"
+                        placeholder="Ingrese la URL de su imagen de perfil">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPortada" class="form-label">URL Portada</label>
+                        <input type="text" formControlName="url_portada" class="form-control" id="exampleInputPortada"
+                            placeholder="Ingrese la URL de su imagen de portada">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail" class="form-label">Email</label>
+                        <input type="email" formControlName="url_correo" class="form-control" id="exampleInputEmail"
+                            placeholder="Ingrese su email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputGithub" class="form-label">Github</label>
+                        <input type="text" formControlName="url_github" class="form-control" id="exampleInputGithub"
+                            placeholder="Ingrese su cuenta de Github">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

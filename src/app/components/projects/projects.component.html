@@ -1,47 +1,106 @@
 <div class="row">
-    <div class="col-3"></div>
-        <div class="col-6">
-            <h3 class="texto">Proyectos</h3>
-            <app-edicion *ngIf="ejemploBoolean"></app-edicion>
-            <div id="carouselExampleDark" class="proshecto carousel carousel-dark slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="\assets\gatito.png" class="d-block w-100" alt="CatPhotoApp">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>CatPhotoApp</h5>
-                        <p>Mi primer proyecto me ayudó a familiarizarme programando con HTML, un blog de gatitos bastante básico.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <img src="\assets\blog.png" class="d-block w-100" alt="Blog de Lya">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Blog de Lya</h5>
-                      <p>Después de aprender un poco acerca de CSS, hice una práctica de ambos lenguajes haciendo un blog propio.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="\assets\form.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>FreeCodeCamp Survey Form</h5>
-                      <p>Este formulario es uno de los últimos proyectos en los que trabajé.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+  <div class="col-3"></div>
+  <div class="col-6">
+    <h3 class="texto d-flex justify-content-center">Proyectos</h3>
+    <button type="button" class="btn btn-warning" (click)="editarOn()">Editar</button>
+    <div id="carouselExampleDark" class="proshecto carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="\assets\gatito.png" class="d-block w-100" alt="CatPhotoApp">
+          <!-- <img [src]="{form.image}" class="d-block w-100" [alt]="{{form.titulo}}"> -->
+          <div class="carousel-caption d-none d-md-block">
+            <h5>CatPhotoApp</h5>
+            <!-- <h5>{{form.titulo}}</h5> -->
+            <p>Mi primer proyecto me ayudó a familiarizarme programando con HTML, un blog de gatitos bastante básico.</p>
+            <!-- <p>{{form.descripcion}}</p> -->
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="col-6"></div>
-</div>
-
+    <!-- agregar icon edit y delete -->
+    <!-- [formGroup]="form"  -->
+    <form *ngIf="mostrarEditar">
+      <div class="m-5">
+        <h1 class="app-title">Editar portfolio</h1>
+        <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+          <label for="exampleInputId" class="form-label">Id</label>
+          <input type="number" formControlName="id" class="form-control" id="exampleInputId" placeholder="Ingrese el ID">
+        </div>
+        <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+          <label for="exampleInputTitulo" class="form-label">Título</label>
+          <input type="text" formControlName="titulo" class="form-control" id="exampleInputTitulo" placeholder="Ingrese el título de su proyecto">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputDescripcion" class="form-label">Descripción</label>
+          <input type="text" formControlName="descripcion" class="form-control" id="exampleInputDescripcion" placeholder="Ingrese Ingrese una breve descripción">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputImage" class="form-label">Image</label>
+          <input type="text" formControlName="image" class="form-control" id="exampleInputImage"
+          placeholder="Ingrese el URL de la imagen">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-6"></div>
+  <!-- </div>
+<div class="row">
+  <div class="col-3"></div>
+      <div class="col-6">
+          <h3 class="texto">Proyectos</h3>
+          <div id="carouselExampleDark" class="proshecto carousel carousel-dark slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="\assets\gatito.png" class="d-block w-100" alt="CatPhotoApp">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h5>CatPhotoApp</h5>
+                      <p>Mi primer proyecto me ayudó a familiarizarme programando con HTML, un blog de gatitos bastante básico.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                  <img src="\assets\blog.png" class="d-block w-100" alt="Blog de Lya">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Blog de Lya</h5>
+                    <p>Después de aprender un poco acerca de CSS, hice una práctica de ambos lenguajes haciendo un blog propio.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="\assets\form.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>FreeCodeCamp Survey Form</h5>
+                    <p>Este formulario es uno de los últimos proyectos en los que trabajé.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+  </div>
+  <div class="col-6"></div>
+</div> -->

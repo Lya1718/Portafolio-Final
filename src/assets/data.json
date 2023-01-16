@@ -1,0 +1,77 @@
+{
+    "name": "Lourdes",
+    "apellido": "Ramos",
+    "backImage": "https://ar.pinterest.com/pin/655766395737528995/",
+    "profesion": "Developer Full Stack Jr",
+    "url_correo": "ramoslou137@gmail.com",
+    "url_github": "https://github.com/Lya1718",
+    "sobre_mi": "Hola! Mi nombre es Lourdes, soy una desarrolladora web ubicada en Argentina con un especial interés en la creación y diseño de obras completamente originales, autodidacta, trabajadora independiente y amante de la música.",
+    "educacion": [{
+        "id": 1,
+        "institucion": "E.P.E.P. N°158 'Sargento Cabral'",
+        "titulo": "Educación Primaria",
+        "descripcion": "2010-2015"
+    },
+    {
+        "id": 2,
+        "institucion": "E.P.E.S. N°2 'Batalla de Maipú'",
+        "titulo": "Educación Secundaria",
+        "descripcion": "2016-2021"
+    },
+    {
+        "id": 3,
+        "institucion": "Future Learn",
+        "titulo": "Basic English 1: Elementary",
+        "descripcion": "2021"
+    },
+    {
+        "id": 4,
+        "institucion": "Future Learn",
+        "titulo": "Basic English 2: Pre-Intermediate",
+        "descripcion": "2021"
+    },
+    {
+        "id": 5,
+        "institucion": "Argentina Programa",
+        "titulo": "#SéProgramar",
+        "descripcion": "2022"
+    },
+    {
+        "id": 6,
+        "institucion": "Argentina Programa",
+        "titulo": "#YoProgramo",
+        "descripcion": "2022"
+    }],
+    "habilidades": [
+        {
+            "id": 1,
+            "habilidad": "HTML5",
+            "nivel": "70"
+        },
+        {
+            "id": 2,
+            "habilidad": "CSS3",
+            "nivel": "60"
+        },
+        {
+            "id": 2,
+            "habilidad": "JavaScript",
+            "nivel": "60"
+        },
+        {
+            "id": 2,
+            "habilidad": "Java",
+            "nivel": "60"
+        },
+        {
+            "id": 2,
+            "habilidad": "SQL",
+            "nivel": "80"
+        },
+        {
+            "id": 2,
+            "habilidad": "Inglés",
+            "nivel": "80"
+        }
+    ]
+}

@@ -1,31 +1,6 @@
-<!-- <div class="titulo">
-    <h2 class="texto">Formación Académica</h2>
-    <app-edicion *ngIf="ejemploBoolean"></app-edicion>
-</div>
-<div class="col-12"
->
-    <p class="texto titleInfo">{{educ.title}}</p>
-    <p class="textoInfo">{{educ.text}}<img 
-        id="x" 
-        src="\assets\x.png" 
-        alt="Eliminar"
-        (click)="borrar(educ)"
-        *ngIf="editarPagina"
-    ></p>
-    
-    <h2 class="texto">Sobre mí<app-edicion *ngIf="ejemploBoolean"></app-edicion>
-    </h2>
-    <p>
-        Hola! Mi nombre es Lourdes, soy una desarrolladora
-        web ubicada en Argentina con un especial interés en
-        la creación y diseño de obras completamente originales,
-        autodidacta, trabajadora independiente y amante de
-        la música.
-    </p>
-</div> -->
-<div class="todo">
+<!-- <div class="todo">
     <div>
-        <h2 class=texto>Formación Académica</h2>
+        <h2 class=texto>Educación</h2>
         <ul>
             <p>Educación Primaria</p>
             <li>E.P.E.P. N°158 'Sargento Cabral' 2009-2015</li>
@@ -43,5 +18,50 @@
             <li>#SéProgramar 2022</li>
             <li>#YoProgramo 2022</li>
         </ul>
+    </div> -->
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div>
+            <h2 class="texto mt-5">Educación</h2>
+            <ul>
+                <p>ejemplo educacion titulo</p>
+                <!-- <p>{{educacion.titulo}}</p> -->
+                <li>ejemplo institucion y descripcion</li>
+                <!-- <li>{{educacion.institucion}} {{educacion.descripcion}}</li> -->
+            </ul>
+            <button type="button" class="btn btn-warning" (click)="editarOn()">Editar</button>
+            <!-- <button (click)="saveEducacion(form.id)" *ngIf="mostrarEditar">Nuevo/Modificar</button> -->
+            <!-- <button (click)="deleteEducacion(form.id)" *ngIf="mostrarEditar">Eliminar</button> -->
+        </div>
+        <!-- agregar icon edit y delete -->
+        <!-- [formGroup]="form"  -->
+        <form *ngIf="mostrarEditar">
+            <div class="m-5">
+                <h1 class="app-title">Editar portfolio</h1>
+                <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+                    <label for="exampleInputId" class="form-label">Id</label>
+                    <input type="number" formControlName="id" class="form-control" id="exampleInputId"
+                        placeholder="Ingrese el ID">
+                </div>
+                <div class="mb-3" [ngClass]="{'has-error': isSubmitted}">
+                    <label for="exampleInputInstitucion" class="form-label">Institución</label>
+                    <input type="text" formControlName="institucion" class="form-control" id="exampleInputInstitucion"
+                        placeholder="Ingrese el nombre de la institución">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputTitulo" class="form-label">Título</label>
+                    <input type="text" formControlName="titulo" class="form-control" id="exampleInputTitulo"
+                        placeholder="Ingrese el título">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputDescripcion" class="form-label">Descripción</label>
+                    <input type="text" formControlName="descripcion" class="form-control" id="exampleInputDescripcion"
+                        placeholder="Ingrese una breve descripción">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
+    <div class="col-3"></div>
 </div>
